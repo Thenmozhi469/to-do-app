@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #8b5cf6;
+  --pink: #ec4899;
+  --blue: #3b82f6;
+  --cyan: #06b6d4;
+  --orange: #f97316;
+  --green: #10b981;
+  --teal: #14b8a6;
+  --red: #ef4444;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.4); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139,92,246,0.7); }
+
+/* Glass card utility */
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+}
+
+.glass-dark {
+  background: rgba(15,10,30,0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+}
+
+/* Gradient text */
+.grad-text {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient bg */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #0f0a1e, #1a0533, #0d1b3e, #0a1628);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Glow */
+.glow-purple { box-shadow: 0 0 30px rgba(139,92,246,0.4); }
+.glow-pink   { box-shadow: 0 0 30px rgba(236,72,153,0.4); }
+.glow-blue   { box-shadow: 0 0 30px rgba(59,130,246,0.4); }
+
+/* Floating particles bg */
+@keyframes float1 { 0%,100%{transform:translateY(0) translateX(0)} 33%{transform:translateY(-40px) translateX(20px)} 66%{transform:translateY(20px) translateX(-15px)} }
+@keyframes float2 { 0%,100%{transform:translateY(0) translateX(0)} 33%{transform:translateY(30px) translateX(-25px)} 66%{transform:translateY(-20px) translateX(30px)} }
+@keyframes float3 { 0%,100%{transform:translateY(0) translateX(0)} 50%{transform:translateY(-60px) translateX(10px)} }
+
+.particle { position:absolute; border-radius:50%; pointer-events:none; opacity:0.15; }
+.p1{width:300px;height:300px;background:radial-gradient(circle,#8b5cf6,transparent);top:10%;left:5%;animation:float1 12s ease-in-out infinite;}
+.p2{width:200px;height:200px;background:radial-gradient(circle,#ec4899,transparent);top:60%;right:10%;animation:float2 10s ease-in-out infinite;}
+.p3{width:150px;height:150px;background:radial-gradient(circle,#06b6d4,transparent);bottom:15%;left:40%;animation:float3 14s ease-in-out infinite;}
+.p4{width:250px;height:250px;background:radial-gradient(circle,#3b82f6,transparent);top:35%;right:30%;animation:float1 16s ease-in-out infinite reverse;}
